@@ -1000,6 +1000,8 @@ $php-graph-color: linear-gradient(to right, #00f7ff 0%, #001aff 100%);
     }
 
     .table-wrap{
+        max-width: 1000px;
+        margin:0 auto;
         margin-top: 30px;
         @include mq(sm) {
             max-width:800px;
