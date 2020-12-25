@@ -1,4 +1,3 @@
-// #から始まるURLがクリックされた時
 $('a[href^="#"]').click(function () {
   // .headerクラスがついた要素の高さを取得
   let header = $(".header").innerHeight();
