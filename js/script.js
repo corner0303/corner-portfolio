@@ -43,23 +43,23 @@ $(function () {
 });
 
 
-// $(function () {
-//   $(window).scroll(function () {
-//     $('.is-trigger').each(function () {
-//       var position = $(this).offset().top;
-//       var scroll = $(window).scrollTop();
-//       var windowHeight = $(window).height();
-//       if (scroll > position - windowHeight + 50) {
-//         $(this).addClass('animation-appear-block');
-//         $(this).delay(550).queue(function () {
-//           $(this).find('.section-ttl').addClass('is-visible').dequeue();
-//           // $('#mainvisual-btn').addClass('is-visible').dequeue();
+$(function () {
+  $(window).scroll(function () {
+    $('.is-trigger').each(function () {
+      var position = $(this).offset().top;
+      var scroll = $(window).scrollTop();
+      var windowHeight = $(window).height();
+      if (scroll > position - windowHeight + 50) {
+        $(this).addClass('animation-appear-block');
+        $(this).delay(550).queue(function () {
+          $(this).find('.section-ttl').addClass('is-visible').dequeue();
+          // $('#mainvisual-btn').addClass('is-visible').dequeue();
 
-//         })
-//       }
-//     });
-//   });
-// });
+        })
+      }
+    });
+  });
+});
 $(function () {
   $(window).scroll(function () {
     $('.my-level-item').each(function () {
@@ -250,24 +250,10 @@ $(function () {
 
 window.onload = function() {
   document.getElementById("loading-text").innerText = "ローディング完了!";
+
+  const main = document.getElementById('scroll-js');
+  main.classList.add('animation-appear-block');
   const spinner = document.getElementById('loading');
   spinner.classList.add('loaded');
-  $(function () {
-    $(window).scroll(function () {
-      $('.is-trigger').each(function () {
-        var position = $(this).offset().top;
-        var scroll = $(window).scrollTop();
-        var windowHeight = $(window).height();
-        if (scroll > position - windowHeight + 50) {
-          $(this).addClass('animation-appear-block');
-          $(this).delay(550).queue(function () {
-            $(this).find('.section-ttl').addClass('is-visible').dequeue();
-            // $('#mainvisual-btn').addClass('is-visible').dequeue();
-  
-          })
-        }
-      });
-    });
-  });
 }
 
