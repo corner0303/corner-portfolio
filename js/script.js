@@ -1,3 +1,4 @@
+// #から始まるURLがクリックされた時
 $('a[href^="#"]').click(function () {
   // .headerクラスがついた要素の高さを取得
   let header = $(".header").innerHeight();
@@ -96,35 +97,36 @@ $(function () {
 });
 
 // scroll
-$(window).scroll(function (){
-	$(".advantage-item-ttl").each(function(){
-	  var position = $(this).offset().top; //ページの一番上から要素までの距離を取得
-	  var scroll = $(window).scrollTop(); //スクロールの位置を取得
-	  var windowHeight = $(window).height(); //ウインドウの高さを取得
-	  if (scroll > position - windowHeight){ //スクロール位置が要素の位置を過ぎたとき
-	    $(this).addClass('-advantage-active'); //クラス「active」を与える
-	  }
-	});
+$(window).scroll(function () {
+  $(".advantage-item-ttl").each(function () {
+    var position = $(this).offset().top; //ページの一番上から要素までの距離を取得
+    var scroll = $(window).scrollTop(); //スクロールの位置を取得
+    var windowHeight = $(window).height(); //ウインドウの高さを取得
+    if (scroll > position - windowHeight) { //スクロール位置が要素の位置を過ぎたとき
+      $(this).addClass('-advantage-active'); //クラス「active」を与える
+    }
+  });
 });
-$(window).scroll(function (){
-	$(".marker").each(function(){
-	  var position = $(this).offset().top; //ページの一番上から要素までの距離を取得
-	  var scroll = $(window).scrollTop(); //スクロールの位置を取得
-	  var windowHeight = $(window).height(); //ウインドウの高さを取得
-	  if (scroll > position - windowHeight){ //スクロール位置が要素の位置を過ぎたとき
-	    $(this).addClass('-marker-active'); //クラス「active」を与える
-	  }
-	});
+$(window).scroll(function () {
+  $(".marker").each(function () {
+    var position = $(this).offset().top; //ページの一番上から要素までの距離を取得
+    var scroll = $(window).scrollTop(); //スクロールの位置を取得
+    var windowHeight = $(window).height(); //ウインドウの高さを取得
+    if (scroll > position - windowHeight) { //スクロール位置が要素の位置を過ぎたとき
+      $(this).addClass('-marker-active'); //クラス「active」を与える
+    }
+  });
 });
-$(window).scroll(function (){
-	$(".marker-ttl").each(function(){
-	  var position = $(this).offset().top; //ページの一番上から要素までの距離を取得
-	  var scroll = $(window).scrollTop(); //スクロールの位置を取得
-	  var windowHeight = $(window).height(); //ウインドウの高さを取得
-	  if (scroll > position - windowHeight){ //スクロール位置が要素の位置を過ぎたとき
-	    $(this).addClass('-marker-active'); //クラス「active」を与える
-	  }
-	});
+
+$(window).scroll(function () {
+  $(".marker-ttl").each(function () {
+    var position = $(this).offset().top; //ページの一番上から要素までの距離を取得
+    var scroll = $(window).scrollTop(); //スクロールの位置を取得
+    var windowHeight = $(window).height(); //ウインドウの高さを取得
+    if (scroll > position - windowHeight) { //スクロール位置が要素の位置を過ぎたとき
+      $(this).addClass('-marker-active'); //クラス「active」を与える
+    }
+  });
 });
 
 /*https://stand-4u.com/web/javascript/slick.html*/
@@ -245,4 +247,10 @@ $(function () {
 
   })
 });
+
+window.onload = function() {
+  document.getElementById("loading-text").innerText = "ローディング完了!";
+  const spinner = document.getElementById('loading');
+  spinner.classList.add('loaded');
+}
 
